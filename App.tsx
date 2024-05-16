@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image,StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import  QRcode from './src/QRcode';
+import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 
 function TelaInicial() {
   return (
@@ -12,13 +12,68 @@ function TelaInicial() {
   );
 }
 
-function TelaConfig() {
-  return (
-    <View>
-      <QRcode/>
-  </View>
-  );
-}
+function TelaConfig() 
+        return (
+            <View style={styles.container}>
+                <Image
+                source={require('./assets/icon.png')}
+                style={styles.logo}
+                />
+    
+                <Text style={styles.title}>20 Caracteres</Text>
+    
+                <View style={styles.area}>
+                    <Slider
+                    style={{height: 50}}
+                    minimumValue={6}
+                    maximumValue={20}
+                    maximumTrackTintColor="red"
+                    minimumTrackTintColor='red'
+                    thumbTintColor='blue'
+                    />
+                </View>
+    
+                <TouchableOpacity style={styles.button}>
+                <Text styles={styles.buttonText}>Gerar Senha</Text>
+                </TouchableOpacity>
+    
+            </View>
+        );
+    
+    const styles = StyleSheet.create({
+       container: {
+        flex: 1,
+        backgroundColor: '#F3F3FF',
+        alignItems: 'center',
+        justifyContent: 'center',
+       } ,
+       logo:{
+        marginBottom: 60
+       },
+       area:{
+        marginTop: 14,
+        marginBottom: 14,
+        width:"80%",
+        backgroundColor:"blue",
+        borderRadius: 8,
+        padding: 8,
+       },
+       button:{
+        backgroundColor:"blue",
+        width: "80%",
+        height: 50,
+        alignContent: "center",
+        justifyContent: "center",
+        borderRadius: 8,
+        marginBottom:18,
+       },
+        buttonText:{
+        color: "gold",
+        fontSize: 20,
+        
+       }
+    
+    });
 
 function TelaGuia() {
   return (
