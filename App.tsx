@@ -1,18 +1,19 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-function HomeScreen() {
+function TelaInicial() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Inicio!</Text>
+      <Image>./assets/icon.png</Image>
     </View>
   );
 }
 
-function SettingsScreen() {
+function TelaConfig() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Configurações</Text>
@@ -20,7 +21,7 @@ function SettingsScreen() {
   );
 }
 
-function GuiaScreen() {
+function TelaGuia() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Guia 2</Text>
@@ -34,9 +35,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen style={{ flex: 1, Colors: 'red', justifyContent:'center', alignItems:'center'}}  name="Inicio" component={HomeScreen} />
-        <Tab.Screen name="Configurações" component={SettingsScreen} />
-        <Tab.Screen name="Guia" component={GuiaScreen} />
+        <Tab.Screen name="Inicio" component={TelaInicial} />
+        <Tab.Screen name="Configurações" component={TelaConfig} />
+        <Tab.Screen name="Guia" component={TelaGuia} />
       </Tab.Navigator>
     </NavigationContainer>
   );
