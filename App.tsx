@@ -1,46 +1,36 @@
 import * as React from 'react';
-import { Text, View, Image,StyleSheet } from 'react-native';
+import { Button, View } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
-function TelaInicial() {
+function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style= {{color: '#f0f', fontSize: 50}}>Inicio!</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Notificações')}
+        title="Ir para Notificações"
+      />
     </View>
   );
 }
 
-function TelaConfig() {
-return (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>Configurações</Text>
-    <Image style={{flex:1, justifyContent:'center', marginBottom: '60'}}
-            source={require('./assets/icon.png')}
-            />
-  </View>
-);
-}
-
-function TelaGuia() {
+function NotificationsScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Guia 2</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button onPress={() => navigation.goBack()} title="Voltar para Inicio" />
     </View>
   );
 }
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Inicio" component={TelaInicial} />
-        <Tab.Screen name="Configurações" component={TelaConfig} />
-        <Tab.Screen name="Guia" component={TelaGuia} />
-      </Tab.Navigator>
+      <Drawer.Navigator initialRouteName="Inicio">
+        <Drawer.Screen name="Inicio" component={HomeScreen} />
+        <Drawer.Screen name="Notificações" component={NotificationsScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
