@@ -99,9 +99,7 @@ const styles = StyleSheet.create({
     width: '90%',
     alignSelf:'flex-start',
     color:'#ff375b',
-    marginBottom: 8,
-    
-
+    marginBottom: 8, 
   }
 
 })
