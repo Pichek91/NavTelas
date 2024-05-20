@@ -3,6 +3,8 @@ import { Button, View, Text, StyleSheet, TextInput, TouchableOpacity } from 'rea
 import { useForm, Controller } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { Feather } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 const schema = yup.object({
   patrimonio: yup.string().required("Informe o Patrimônio!"),
@@ -156,11 +158,13 @@ export function AdicionarEquipamento({ navigation }) {
   
 
       <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignin)}>
-        <Text style={styles.buttonText}>Acessar</Text>
+        <Text style={styles.buttonText}>Enviar</Text>
+        <Feather name="send" size={24} color="#fff" />
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText}>Home</Text>
+        <AntDesign name="home" size={24} color="#fff" />
       </TouchableOpacity>
     </View>
   );
@@ -176,9 +180,8 @@ const styles = StyleSheet.create({
   },
   title:{
     fontSize:34,
-    justifyContent: 'center',
     marginBottom:34,
-    color: '#0c0c0c',
+    color: '#121212',
     fontWeight:'bold'
   },
   input:{
@@ -186,21 +189,23 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor:'#ffffff',
     paddingHorizontal: 8,
+    marginBottom: 8,
     borderRadius: 4,
     color:'#121212'
   },
   button:{
     width:'100%',
-    height: 40,
+    height: 60,
     backgroundColor: '#45d800',
     borderRadius: 8,
+    marginBottom: 8,
     justifyContent:'center',
     alignItems: 'center',
   },
   buttonText:{
     color:'#fff',
     justifyContent:'center',
-    fontWeight:'condensed',
+    fontWeight:'bold',
     fontSize: 18
   },
   labelError:{
