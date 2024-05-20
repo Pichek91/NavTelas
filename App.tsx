@@ -13,7 +13,7 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer screenOptions={{draweStyle: { backgroudColor: 'pink', width: 240},}}>
+    <NavigationContainer screenOptions={{draweStyle: { backgroudColor: 'black', width: 240},}}>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notificações" component={NotificationsScreen} />
