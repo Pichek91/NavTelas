@@ -52,7 +52,7 @@ export function AdicionarEquipamento({ navigation }) {
 
       <Button style={styles.button}
         onPress={() => navigation.navigate('Home')}
-        title="Home"
+        title="Inicio"
       />
     </View>
   );
