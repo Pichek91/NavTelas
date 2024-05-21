@@ -8,7 +8,7 @@ export function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button
-        onPress={() => navigation.navigate('Notifications')}
+        onPress={() => navigation.goback('Notifications')}
         title="Vá para Notificações"
       />
     </View>
