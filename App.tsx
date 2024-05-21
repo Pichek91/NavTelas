@@ -5,12 +5,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
 
+import { HomeScreen } from './src/pages/HomeScreen';
+import { NotificationsScreen } from './src/pages/NotificationsScreen';
+import { AdicionarEquipamento } from './src/pages/AdicionarEquipamento';
 
-import {Inicio} from './src/pages/Inicio'; 
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-      <Inicio />
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        <Drawer.Screen name="Adicionar Equipamento" component={AdicionarEquipamento} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
 
