@@ -10,16 +10,10 @@ import { AdicionarEquipamento } from './src/pages/AdicionarEquipamento';
 
 
 const Drawer = createDrawerNavigator();
+
 const Inicio = () => {
     return(
-      
-    )
-
-}
-
-export function Inicio() {
-  return (
-    <NavigationContainer screenOptions={{draweStyle: { backgroudColor: 'black', width: 240},}}>
+      <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Notificações" component={NotificationsScreen} />
@@ -27,4 +21,7 @@ export function Inicio() {
       </Drawer.Navigator>
     </NavigationContainer>
   );
+    
+
 }
+export default Inicio

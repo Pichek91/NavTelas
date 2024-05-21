@@ -10,12 +10,7 @@ import {Inicio} from './src/pages/Inicio';
 
 export default function App() {
   return (
-      <View style={styles.container}>
-          <TouchableOpacity style={styles.button} onPress={() => Inicio('Inicio')}>
-            <Text style={styles.buttonText}>Home</Text>
-            <AntDesign name="home" size={24} color="#fff" />
-          </TouchableOpacity>
-      </View>
+      <Inicio />
   );
 }
 
