@@ -3,6 +3,7 @@ import { Button, View, StyleSheet,Image,Text, TouchableOpacity, Linking } from '
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { Foundation } from '@expo/vector-icons';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 function linkExternal (){
   Linking.openURL('https://grancoffee.com.br/');
@@ -13,7 +14,7 @@ function linkExternal (){
 export function HomeScreen({ navigation }) {
   return (
     <View style = {styles.container}>
-      <Image source={require('./assets/icon.png')}/>
+      <AntDesign name="upcircle" size={24} color="black" />
       <TouchableOpacity style={styles.button} onPress={linkExternal}>
         <Text style={styles.buttonText}>Visite nosso Site</Text>
         <Foundation name="web" size={34} color="#fff" />
