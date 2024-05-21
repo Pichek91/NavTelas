@@ -13,6 +13,7 @@ function linkExternal (){
 export function HomeScreen({ navigation }) {
   return (
     <View style = {styles.container}>
+      <Image source={require('./assets/icon.png')}/>
       <TouchableOpacity style={styles.button} onPress={linkExternal}>
         <Text style={styles.buttonText}>Visite nosso Site</Text>
         <Foundation name="web" size={34} color="#fff" />
